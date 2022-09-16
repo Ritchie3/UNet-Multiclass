@@ -1,12 +1,13 @@
 import torch
 from torch.utils.data import DataLoader
 from torchvision import datasets, utils, transforms
-from datasets import CityscapesDataset
+from scripts.datasets import Picanol_CityscapesDataset
 from PIL import Image
 from tqdm import tqdm
 import numpy as np
 
 def get_cityscapes_data(
+
     mode,
     split,
     relabelled,
@@ -19,7 +20,7 @@ def get_cityscapes_data(
     pin_memory=True,
 
 ):
-    data = CityscapesDataset(
+    data = Picanol_CityscapesDataset(
         mode=mode, split=split, target_type=target_type, relabelled=relabelled, transform=transforms, root_dir=root_dir, eval=eval)
 
     data_loaded = torch.utils.data.DataLoader(

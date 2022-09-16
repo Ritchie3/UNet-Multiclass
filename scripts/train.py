@@ -1,11 +1,14 @@
-import torch 
+
+
+
+import torch
 import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import transforms
 from tqdm import tqdm
-from utils import *
-from model import UNET
+from scripts.utils import *
+from scripts.model import UNET
 
 if torch.cuda.is_available():
     DEVICE = 'cuda:0'

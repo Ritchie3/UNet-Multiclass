@@ -1,10 +1,11 @@
 import torch
-from model import UNET
-from utils import *
+from scripts.model import UNET
+from scripts.utils import *
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 from torchvision import transforms
-from cityscapesscripts.helpers.labels import trainId2label as t2l
+from scripts.helpers.labels import trainId2label as t2l
+
 
 if torch.cuda.is_available():
     device = 'cuda:0'
